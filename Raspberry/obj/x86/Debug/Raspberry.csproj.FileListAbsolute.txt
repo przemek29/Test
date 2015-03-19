@@ -1,0 +1,10 @@
+C:\Users\DOMINIKA\AppData\Local\Temporary Projects\Raspberry\bin\Debug\Raspberry.exe
+C:\Users\DOMINIKA\AppData\Local\Temporary Projects\Raspberry\bin\Debug\Raspberry.pdb
+C:\Users\DOMINIKA\AppData\Local\Temporary Projects\Raspberry\obj\x86\Debug\Raspberry.exe
+C:\Users\DOMINIKA\AppData\Local\Temporary Projects\Raspberry\obj\x86\Debug\Raspberry.pdb
+C:\Users\DOMINIKA\documents\visual studio 2010\Projects\Raspberry\Raspberry\obj\x86\Debug\Raspberry.exe
+C:\Users\DOMINIKA\documents\visual studio 2010\Projects\Raspberry\Raspberry\obj\x86\Debug\Raspberry.pdb
+C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\bin\Debug\RegisterMapADXL345.cs
+C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\bin\Debug\Raspberry.exe
+C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\bin\Debug\Raspberry.pdb
+C:\Users\DOMINIKA\documents\visual studio 2010\Projects\Raspberry\Raspberry\obj\x86\Debug\Raspberry.csprojResolveAssemblyReference.cache
