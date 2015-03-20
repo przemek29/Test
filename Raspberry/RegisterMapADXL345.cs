@@ -7,7 +7,7 @@ namespace Raspberry
 {
     public class RegisterMapADXL345
     {
-        public string Adress = "-y 1 0x53";             //-------------ADXL345 adress-------------
+        public string Adress = "-y 1 0x53";       //-------------ADXL345 adress-------------
         public string DevID = "0x00";             //[R]   Device ID
         public string ThreshTap = "0x1D";         //[R/W] Tap threshold
         public string OfsX = "0x1E";              //[R/W] X-axis offset

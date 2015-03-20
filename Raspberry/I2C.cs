@@ -12,6 +12,7 @@ namespace Raspberry
         // public void WriteData { get; set; }
 
         private string i2cgetExe = "/usr/sbin/i2cget";
+        private string i2csetExe = "/usr/sbin/i2cset";
 
         private string hexString = "";
         private Process p;
@@ -36,7 +37,7 @@ namespace Raspberry
             // i2cgetExe has full path to executable
             // Need full path because UseShellExecute is false
 
-            p.StartInfo.FileName = i2cgetExe;
+            p.StartInfo.FileName = i2csetExe;
             // Pass arguments as a single string
             p.StartInfo.Arguments = Adress + " " + Register + " " + Value;
             // Now run i2cget & wait for it to finish
@@ -45,7 +46,7 @@ namespace Raspberry
             p.WaitForExit();
         }
 
-        public int ReadData(string Adress, string Register)
+        public long ReadData(string Adress, string Register)
         {
 
             // Don't raise event when process exits
@@ -70,10 +71,14 @@ namespace Raspberry
             string data = p.StandardOutput.ReadToEnd();
             // Get LSB & parse as integer
             hexString = data.Substring(2, 2);
-            int HexInt = Int32.Parse(hexString,
+            
+            long HexInt = Int32.Parse(hexString,
                                   System.Globalization.NumberStyles.AllowHexSpecifier);
+            
 
             return HexInt;
+
+            
         }
 
         
