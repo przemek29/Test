@@ -1,5 +1,6 @@
-C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\bin\Release\RegisterMapADXL345.cs
 C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\bin\Release\Raspberry.exe
 C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\bin\Release\Raspberry.pdb
 C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\obj\x86\Release\Raspberry.exe
 C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\obj\x86\Release\Raspberry.pdb
+C:\Users\DOMINIKA\Documents\Visual Studio 2010\Projects\Raspberry\Raspberry\obj\x86\Release\Raspberry.csprojResolveAssemblyReference.cache
+C:\Users\DOMINIKA\documents\visual studio 2010\Projects\Raspberry\Raspberry\bin\Release\RegisterAdressMapADXL345.cs

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Raspberry
 {
-    public class RegisterMapADXL345
+    public class RegisterAdressMapADXL345
     {
         public string Adress = "-y 1 0x53";       //-------------ADXL345 adress-------------
         public string DevID = "0x00";             //[R]   Device ID

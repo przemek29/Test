@@ -21,6 +21,7 @@ namespace Raspberry
             I2C.WriteData(Reg.Adress, Reg.CtrlReg4, Reg.DefaultCtrlReg4);
         }
 
+        
         public double GetDataL3G4200D(string LSB, string MSB)
         {
 

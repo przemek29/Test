@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
+
 namespace Raspberry
 {
    public class I2C
@@ -45,9 +46,40 @@ namespace Raspberry
             p.Start();
             p.WaitForExit();
         }
+        public string TimeMeasurementWrite(string Adress, string Register, string Value)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+
+            // Don't raise event when process exits
+            p.EnableRaisingEvents = false;
+            // We're using an executable not document, so UseShellExecute false
+            p.StartInfo.UseShellExecute = false;
+            // Redirect StandardError
+            p.StartInfo.RedirectStandardError = true;
+            // Redirect StandardOutput so we can capture it
+            p.StartInfo.RedirectStandardOutput = true;
+            // i2cgetExe has full path to executable
+            // Need full path because UseShellExecute is false
+
+            p.StartInfo.FileName = i2csetExe;
+            // Pass arguments as a single string
+            p.StartInfo.Arguments = Adress + " " + Register + " " + Value;
+            // Now run i2cget & wait for it to finish
+
+            p.Start();
+            p.WaitForExit();
+            stopwatch.Stop();
+            var time = Convert.ToString(stopwatch.Elapsed.Milliseconds);
+            return time;
+        }
+
 
         public long ReadData(string Adress, string Register)
         {
+
+            
 
             // Don't raise event when process exits
             p.EnableRaisingEvents = false;
@@ -74,11 +106,54 @@ namespace Raspberry
             
             long HexInt = Int32.Parse(hexString,
                                   System.Globalization.NumberStyles.AllowHexSpecifier);
-            
 
+
+            
+           
             return HexInt;
 
             
+        }
+        public string TimeMeaserumentRead (string Adress, string Register)
+        {
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            // Don't raise event when process exits
+            p.EnableRaisingEvents = false;
+            // We're using an executable not document, so UseShellExecute false
+            p.StartInfo.UseShellExecute = false;
+            // Redirect StandardError
+            p.StartInfo.RedirectStandardError = true;
+            // Redirect StandardOutput so we can capture it
+            p.StartInfo.RedirectStandardOutput = true;
+            // i2cgetExe has full path to executable
+            // Need full path because UseShellExecute is false
+
+            p.StartInfo.FileName = i2cgetExe;
+            // Pass arguments as a single string
+            p.StartInfo.Arguments = Adress + " " + Register;
+            // Now run i2cget & wait for it to finish
+
+            p.Start();
+            p.WaitForExit();
+            // Data returned in format 0x00
+            string data = p.StandardOutput.ReadToEnd();
+            // Get LSB & parse as integer
+            hexString = data.Substring(2, 2);
+
+            long HexInt = Int32.Parse(hexString,
+                                  System.Globalization.NumberStyles.AllowHexSpecifier);
+
+
+            stopwatch.Stop();
+            string elapsed = Convert.ToString(stopwatch.Elapsed.Milliseconds);
+
+            return elapsed;
+            
+
+
         }
 
         

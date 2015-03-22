@@ -8,7 +8,7 @@ namespace Raspberry
 {
     class Adxl345
     {
-        RegisterMapADXL345 Reg = new RegisterMapADXL345();
+        RegisterAdressMapADXL345 Reg = new RegisterAdressMapADXL345();
         I2C I2C = new I2C();
 
         public void WriteDefaultADXL345()
@@ -18,6 +18,7 @@ namespace Raspberry
             I2C.WriteData(Reg.Adress, Reg.PowerCtl, Reg.MeasureOff);
         }
 
+        
         public double GetDataADXL345(string LSB, string MSB)
         {
             var Data0 = I2C.ReadData(Reg.Adress, LSB);
@@ -26,8 +27,8 @@ namespace Raspberry
             var Data = Convert.ToDouble(Data1 << 8 | Data0);
 
             Data = Data * 4 / Math.Pow(2, 10);
-            Data = Data * Reg.EarthGravity;
-
+           // Data = Data * Reg.EarthGravity;
+            
             return Data;
 
         }
